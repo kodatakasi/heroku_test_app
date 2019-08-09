@@ -1,18 +1,22 @@
-
-<%= form_with(model: Contact, local: true) do |form| %>
-  <div class="name">
+<p><%= notice %></p>
+<%= form_with(model: @contact, local: true) do |form| %>
+  <div class="contact_name">
     <%= form.label :name %>
     <br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name , autocomplete: 'off'%>
   </div>
-  <div class="email">
+  <div class="contact_email">
     <%= form.label :email %>
     <br>
     <%= form.text_field :email %>
   </div>
-  <div class="contact">
-    <%= form.label :contact %>
+  <div class="contact_content">
+    <%= form.label :content %>
     <br>
-    <%= form.text_field :contact %>
+    <%= form.text_field :content %>
   </div>
+  
+   <%= form.submit %>
+  
+
 <% end %>
